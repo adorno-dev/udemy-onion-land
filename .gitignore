@@ -1,0 +1,13 @@
+.vscode/
+obj/
+Library/
+Assembly-CSharp.csproj
+Logs/
+Packages/
+ProjectSettings/
+Temp/
+UserSettings/
+Scenes/
+**/**.sln
+**/**.meta
+**/**.physicsMaterial2D
