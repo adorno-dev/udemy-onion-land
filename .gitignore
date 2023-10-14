@@ -7,6 +7,11 @@ ProjectSettings/
 Temp/
 UserSettings/
 Scenes/
+Assets/Animations/
+Assets/Graphics/
+Assets/Prefabs/
+Assets/TextMesh Pro/
+Assets/Tile Palettes/
 **/**.csproj
 **/**.sln
 **/**.meta

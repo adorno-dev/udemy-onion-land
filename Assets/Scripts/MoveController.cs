@@ -37,7 +37,6 @@ public class MoveController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
             Jump();
-
     }
 
     private void AnimationControllers()
@@ -60,9 +59,11 @@ public class MoveController : MonoBehaviour
 
     private void FlipController()
     {
-        if (rb.velocity.x < 0 && facingRight)
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        if (mousePosition.x < transform.position.x && facingRight)
             Flip();
-        else if (rb.velocity.x > 0 && !facingRight)
+        else if (mousePosition.x > transform.position.x && !facingRight)
             Flip();
     }
 
