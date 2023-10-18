@@ -16,6 +16,8 @@ public class MoveController : MonoBehaviour
     [SerializeField] private float groundCheckRadius;
     private bool isGrounded;
 
+    private bool isJumping;
+
     private bool facingRight = true;
 
 
@@ -30,13 +32,13 @@ public class MoveController : MonoBehaviour
         AnimationControllers();
         CollisionChecks();
         FlipController();
-
-        xInput = Input.GetAxisRaw("Horizontal");
-
+        InputController();
         Movement();
+        Jump();
 
-        if (Input.GetKeyDown(KeyCode.Space))
-            Jump();
+        // xInput = Input.GetAxisRaw("Horizontal");
+        // if (Input.GetKeyDown(KeyCode.Space))
+        //     Jump();
     }
 
     private void AnimationControllers()
@@ -46,9 +48,16 @@ public class MoveController : MonoBehaviour
         anim.SetBool("isGrounded", isGrounded);
     }
 
+    private void InputController()
+    {
+        xInput = Input.GetAxisRaw("Horizontal");
+
+        isJumping = Input.GetKeyDown(KeyCode.Space);
+    }
+
     private void Jump()
     {
-        if (isGrounded)
+        if (isJumping && isGrounded)
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     }
 
