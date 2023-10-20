@@ -39,6 +39,8 @@ public class MoveController : MonoBehaviour
         // xInput = Input.GetAxisRaw("Horizontal");
         // if (Input.GetKeyDown(KeyCode.Space))
         //     Jump();
+
+        // TODO: implement finite-state-machine for movement, jump and shoot
     }
 
     private void AnimationControllers()
